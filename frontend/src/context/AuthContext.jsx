@@ -71,6 +71,9 @@ export const AuthProvider = ({children}) => {
         if(response.ok){
             const data = await response.json()
             setIsAuth(data.message)
+        } else {
+            const error = await response.json()
+            console.log(error.message)
         }
     }
 
@@ -85,6 +88,9 @@ export const AuthProvider = ({children}) => {
         if(response.ok){
             const data = await response.json()
             setIsAdmin(data.message)
+        } else {
+            const error = await response.json()
+            console.log(error.message)
         }
     }
 
