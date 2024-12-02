@@ -38,7 +38,8 @@ const LoginPage = () => {
       });
 
       if (response.ok) {
-        setIsAuth(true);
+        const data = await response.json();
+        console.log(data.message)
         navigate('/');
       } else {
         const data = await response.json();
